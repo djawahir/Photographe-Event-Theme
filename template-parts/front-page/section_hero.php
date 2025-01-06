@@ -4,6 +4,12 @@
     // récupération de la catégorie
     $category = array('mariage', 'concert', 'television', 'reception');
 
+    $taxonomy = [
+        'categorie' => 'CATÉGORIES',
+        'format' => 'FORMATS',
+        'dates' => 'TRIER PAR',
+    ];
+
     // définition des arguments
     $args = array(
         'orderby' => 'rand',

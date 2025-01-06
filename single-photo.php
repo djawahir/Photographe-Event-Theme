@@ -6,9 +6,9 @@
                 <!-- Col Left Description -->
                 <article class="post_photo_desc">
                     <div class="post_photo_desc_content">
-                        <h1 class="post_photo_title"><?php the_title(); ?></h1>
+                    <h1 class="post_photo_title"><?php the_title(); ?></h1>
                         <!-- Display ACF values for post -->
-                        <div class="post_photo_text">Reference : <?php the_field('reference'); ?></div>
+                        <div class="post_photo_text">Reference : <?php  the_field('reference'); ?></div>
                         <?php $categories = get_the_terms(get_the_ID(), 'categorie');
                         if ($categories && !is_wp_error($categories)) {
                             $category_names = array();
@@ -30,8 +30,13 @@
                             echo '<div class="post_photo_text">Format : ' . $format_list . '</div>';
                         }
                         ?>
-                        <div class="post_photo_text">Type : <?php the_field('type'); ?></div>
-                        <div class="post_photo_text">Année : <?php the_field('annee'); ?></div>
+
+
+                       
+                       <div class="post_photo_text">Type : <?php  the_field('type'); ?></div>
+
+                       <div class="post_photo_text">Année : <?php  echo get_the_date('Y'); ?></div>
+
                     </div>
                 </article><!-- post_photo_desc -->
                 <!-- Col Right Photo -->
@@ -44,7 +49,11 @@
             <section class="section_post_contact_nav">
                 <div class="post_contact_text">
                     <p>Cette photo vous intéresse ?</p>
-                    <a class="post_contact_link" href="#">
+                    <a class="post_contact_link" data-reference="<?php echo $reference ?>href="#" >
+
+                    
+
+
                         <span>Contact</span></a>
                 </div>
                 <!-- Pagination post prev / next -->
